@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java Script</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var choices = ['batu', 'gunting', 'kertas'];
+    var userWins = 0;
+    var computerWins = 0;
+
+    for (var round = 1; round <= 3; round++) {
+      var userChoice = prompt('Round ' + round + ': Pilih batu, gunting, atau kertas?');
+      var computerChoice = choices[Math.floor(Math.random() * 3)];
+
+      var result = '';
+
+      if (userChoice === computerChoice) {
+        result = 'Draw';
+      } else if (
+        (userChoice === 'batu'    && computerChoice === 'gunting') ||
+        (userChoice === 'gunting' && computerChoice === 'kertas')  ||
+        (userChoice === 'kertas'  && computerChoice === 'batu')
+      ) {
+        result = 'User Wins';
+        userWins++;
+      } else {
+        result = 'Computer Wins';
+        computerWins++;
+      }
+
+      console.log('User ' + userChoice + ' Vs Computer ' + computerChoice + ' = ' + result);
+    }
+
+    if (userWins > computerWins) {
+      console.log('User wins the game!');
+    } else if (computerWins > userWins) {
+      console.log('Computer wins the game!');
+    } else {
+      console.log('It\'s a draw!');
+    }
+  </script>
+</body>
+</html>

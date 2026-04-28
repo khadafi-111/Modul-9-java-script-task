@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body><br>
+
+  <div class="w3-container">
+    <div class="w3-container w3-cell">
+      <p><label>First Name</label></p>
+      <input class="w3-input w3-border" id="fname" type="text">
+      <p><label>Last Name</label></p>
+      <input class="w3-input w3-border" id="lname" type="text">
+      <p><button class="w3-button w3-blue" onclick="enter()">enter</button></p>
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-container w3-cell">
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    function enter() {
+      var fname = document.getElementById("fname").value;
+      var lname = document.getElementById("lname").value;
+      document.getElementById("result").innerHTML = fname + ' ' + lname;
+    }
+  </script>
+
+</body>
+</html>
