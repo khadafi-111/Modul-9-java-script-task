@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body><br>
+
+  <div class="w3-container">
+    <div class="w3-card w3-padding" style="width:400px; margin:auto;">
+      <h3 class="w3-center">Create Account</h3>
+
+      <input class="w3-input w3-margin-bottom" type="text" id="fname" placeholder="First Name">
+      <input class="w3-input w3-margin-bottom" type="text" id="lname" placeholder="Last Name">
+      <input class="w3-input w3-margin-bottom" type="text" id="country" placeholder="Country">
+      <input class="w3-input w3-margin-bottom" type="email" id="email" placeholder="Email Address">
+      <input class="w3-input w3-margin-bottom" type="tel" id="phone" placeholder="Phone Number">
+      <input class="w3-input w3-margin-bottom" type="password" id="password" placeholder="Password">
+      <input class="w3-input w3-margin-bottom" type="password" id="confirmPassword" placeholder="Confirm Password">
+
+      <input type="checkbox" id="terms" checked>
+      <label>Terms and Condition</label><br><br>
+
+      <button class="w3-button w3-blue w3-block" onclick="handleCreate()">Create</button>
+
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    function handleCreate() {
+      var fname           = document.getElementById('fname').value;
+      var lname           = document.getElementById('lname').value;
+      var country         = document.getElementById('country').value;
+      var email           = document.getElementById('email').value;
+      var phone           = document.getElementById('phone').value;
+      var password        = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var terms           = document.getElementById('terms').checked;
+
+      var passwordStatus = '';
+      if (password === confirmPassword) {
+        passwordStatus = 'Password sama dengan Confirm Password';
+      } else {
+        passwordStatus = 'Password tidak sama dengan Confirm Password';
+      }
+
+      document.getElementById('result').innerHTML =
+        'First Name: ' + fname + '<br>' +
+        'Last Name: ' + lname + '<br>' +
+        'Country: ' + country + '<br>' +
+        'Email: ' + email + '<br>' +
+        'Phone: ' + phone + '<br>' +
+        'Terms: ' + (terms ? 'Disetujui' : 'Tidak Disetujui') + '<br>' +
+        passwordStatus;
+    }
+  </script>
+
+</body>
+</html>
